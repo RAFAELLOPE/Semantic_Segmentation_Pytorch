@@ -37,5 +37,15 @@ $\frac{1}{2} \| x \|^{2} + \frac{c}{n}\sum_{i = 1}^{n} max[ 0, 1 - y_{i}(x^{T}a_
 Deep Neural Networks
 $\frac{1}{n}\sum_{i = 1}^{n}L(y_{i}, DNN(x, a_{i}))$
 
+### Basic Gradient Descent
 
+$x_{k+1} = x_{k} - \nabla f(x) = x_{k} - \alpha_{k} \frac{1}{n} \sum_{i = 1}^{n} \nabla f_{i} (x)$
+ 
+*n* is too big, hence computationally to compute gradient.
+
+Solution: Randomly pick a set of integers $i(k) \in \{ 1,2,3,....,n\}$ to sample the gradient (mini-batch).
+
+$x_{k+1} = x_{k} - \alpha_{k} \frac{1}{n} \sum_{i = 1}^{n} \nabla f_{i(k)}(x_{k})$
+
+Stochastic Gradient is an unbiased estimator of the true gradient.
 
